@@ -1,24 +1,18 @@
-# https://github.com/actions/create-release
+# https://github.com/K-Phoen/semver-release-action
+name: Release
+
 on:
   pull_request:
-    type: closed
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
+    types: closed
 
 jobs:
   build:
-    name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      - name: Tag
+        uses: K-Phoen/semver-release-action@v1.3.1
         with:
-          tag_name: ${{ github  .ref }}
-          release_name: Release ${{ github.ref }}
+          release_branch: master
+          release_strategy: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
