@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Tag
-        uses: K-Phoen/semver-release-action@master
+        uses: K-Phoen/semver-release-action@v1.3.1
         with:
           release_branch: master
+          release_strategy: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
