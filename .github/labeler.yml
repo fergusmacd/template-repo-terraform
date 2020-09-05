@@ -6,3 +6,6 @@ github-config-change:
 documentation:
  - docs/**/*
 
+# Add code change label to any change of files ending with tf
+code-change:
+ - any: ['./*.tf', './**/*.tf']
