@@ -9,3 +9,4 @@ documentation:
 # Add code change label to any change of files ending with tf
 code-change:
  - ./*.tf
+ - ./**/*.tf
