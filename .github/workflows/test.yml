@@ -6,7 +6,6 @@ jobs:
     steps:
       - name: Generate PDF report
         uses: fergusmacd/github-actions-costs@v0.0.1
-        uses: ./
         # pass user input as arguments
         with:
           organisation: ${{secrets.ORGANISATION}}
