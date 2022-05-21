@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate PDF report
-        uses: fergusmacd/github-actions-costs@v0.0.1
+        uses: fergusmacd/github-actions-costs@v0.0.2
         # pass user input as arguments
         with:
           organisation: ${{secrets.ORGANISATION}}
@@ -14,5 +14,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: actions-usage-report
-          path: results/jfrog-terraform
+          path: jfrog-terraform
           if-no-files-found: error
